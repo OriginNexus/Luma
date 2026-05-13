@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 微光翻译</title>
+    <meta name="description" content="联系微光翻译团队，获取产品下载和企业解决方案">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>微光翻译</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#hero">首页</a></li>
+                <li><a href="index.html#pain-points">痛点</a></li>
+                <li><a href="index.html#solutions">解决方案</a></li>
+                <li><a href="index.html#features">功能</a></li>
+                <li><a href="index.html#comparison">对比</a></li>
+                <li><a href="contact.html" class="btn-primary">联系我们</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 联系页面内容 -->
+    <section class="contact-section">
+        <div class="section-container">
+            <div class="contact-header">
+                <h1 class="contact-title">联系我们</h1>
+                <p class="contact-subtitle">如有任何问题或需求，欢迎与我们联系</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>邮箱</h3>
+                        <a href="mailto:jiayouzhanglin666@163.com" class="contact-link">jiayouzhanglin666@163.com</a>
+                    </div>
+
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>电话</h3>
+                        <a href="tel:17610187967" class="contact-link">17610187967</a>
+                    </div>
+
+                    <div class="info-card glass-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>地址</h3>
+                        <span class="contact-text">北京市海淀区</span>
+                    </div>
+                </div>
+
+                <div class="contact-form glass-card">
+                    <h2>发送消息</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" name="message" placeholder="请输入您的需求或问题..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary glow-btn">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>微光翻译 LumaTranslate</span>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-envelope"></i> jiayouzhanglin666@163.com</p>
+                <p><i class="fas fa-phone"></i> 17610187967</p>
+                <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <a href="#">隐私政策</a>
+                <a href="#">使用条款</a>
+                <a href="contact.html">联系我们</a>
+            </div>
+            <p class="copyright">2024 微光翻译. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 响应式菜单
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // 表单提交
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感谢您的留言！我们会尽快与您联系。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
